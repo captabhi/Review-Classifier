@@ -1,0 +1,12 @@
+{% extends 'review_classifier/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="container">
+    {% for i in cm %}
+        {% for j in i %}
+            <p> {{ j }}</p>
+        {% endfor %}
+    {% endfor %}
+    </div>
+{% endblock %}

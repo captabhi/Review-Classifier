@@ -1,0 +1,17 @@
+{% extends 'review_classifier/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for i in form %}
+        <p>  Name: {{ i.customer_name }}
+             Review: {{ i.review }}
+         Review Prediction{{ i.review_type }}
+         Admin Verification{{ i.is_verified }}</p>
+        {% endfor%}
+    <button type="submit" class="btn-primary"> Submit</button>
+    </form>
+    </div>
+{% endblock %}

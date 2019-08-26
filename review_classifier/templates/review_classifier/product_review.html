@@ -1,0 +1,18 @@
+{% extends 'review_classifier/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="container">
+    <h3> {{ item.name }}</h3>
+    <img src="{{ item.photo.url }}">
+    <p> {{ item.speciality }}</p>
+    </div>
+
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+         {{ form.as_p }}
+        <button class="btn btn-primary"  type="submit">Send</button>
+        </form>
+    </div>
+{% endblock %}

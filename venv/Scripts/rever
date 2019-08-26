@@ -1,0 +1,3 @@
+#!C:\Users\ASUS\PycharmProjects\untitled1\venv\Scripts\python.exe -u
+from rever.main import main
+main()

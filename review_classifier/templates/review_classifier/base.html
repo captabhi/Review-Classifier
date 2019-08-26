@@ -1,0 +1,80 @@
+{% load static %}
+{% block head %}
+    <style>
+    .jumbotron {
+    margin-bottom: 0px;
+    background-image: url('https://cupcakeandbake.files.wordpress.com/2013/04/gh-cookies.jpg');
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+{% endblock %}
+
+<header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">
+                  Karachi Bakery is located on Moazzam Jahi Market, Hyderabad, in the Indian state of Telangana. It was founded by Sri Khanchand Ramnani ji. It is one of the popular bakeries in Hyderabad. It is known for its fruit biscuits, dil kush and plum cake.
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://getbootstrap.com/docs/4.1/examples/album/#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="https://getbootstrap.com/docs/4.1/examples/album/#" class="text-white">Like on Facebook</a></li>
+                <li><a href="https://getbootstrap.com/docs/4.1/examples/album/#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="https://getbootstrap.com/docs/4.1/examples/album/#" class="navbar-brand d-flex align-items-center">
+             <img src="https://openclipart.org/image/2400px/svg_to_png/179189/1370962427.png" width="30" height="30">
+              <span>         </span><strong> KARACHI BAKER'S</strong>
+          </a>
+            {% if request.user.is_authenticated %}
+            <div  style="color: #b3d7ff" class="float-lg-right ">{{request.user  }} </div>
+            <a href="{% url 'review_classifier:logout' %}" class="btn btn-primary" >Logout</a>
+
+            {% else %}
+             <a href="{% url 'review_classifier:login' %}" class="btn btn-primary" >Login</a>
+            {% endif %}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+
+
+
+{% block body %}
+
+
+
+{% endblock %}
+<footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+        </p>
+        <p>Made by Jay,Abhi,Himanshu </p>
+        </div>
+    </footer>
+{% block javascript %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+    {% endblock %}
