@@ -17,7 +17,7 @@ class Review(models.Model):
     review=models.TextField()
     rating=models.IntegerField()
     review_type=models.BooleanField()
-    is_verified=models.BooleanField()
+    is_verified=models.BooleanField(null=True)
 
     def __str__(self):
         return self.review

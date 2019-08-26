@@ -10,7 +10,7 @@ import numpy as np
 import re
 from .forms import UserForm
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from django.forms import formset_factory
 
@@ -136,7 +136,7 @@ def loginFunction(request):
     else:
         form=UserForm()
         return  render(request,'review_classifier/login.html',{'form':form})
-'''def insertData(request):
+def insertData(request):
     dataset = pd.read_csv('C://Users//ASUS//Desktop//Natural_Language_Processing//Restaurant_Reviews.tsv',delimiter='\t', quoting=3)
 
     for i in range(0,1000):
@@ -148,5 +148,3 @@ def loginFunction(request):
         saveform.save()
     print("Successfull")
     return HttpResponse("Your Data inserted successfully")
-
-'''
